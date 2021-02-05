@@ -1,0 +1,34 @@
+
+
+1 Linux安装git
+sudo apt-get install git
+
+2 在目录mydir下创建版本库。
+git init
+
+
+3 添加ignore文件列表
+在mydir下创建.ignore
+
+4 添加文件获取目录到版本库
+git add  filename
+git add  dirname
+注意：修改后的文件要git add到缓存区后才能commit到仓库。
+
+5 提交更改到版本库
+git commit -m "your commit log"
+
+6 SSH秘钥生成
+SSH秘钥默认存放在~/.ssh下
+ssh-keygen -t rsa -C "your_email@example.com"
+git等源代码管理中，使用cat ~/.ssh/id_rsa.pub命令，打印并将相应内容复制到源代码管理服务器即可实现git的无密码管理。
+
+7 添加到远程Github仓库
+现在GitHub网站上建立一个仓库
+通过下面命令可以创建一名字为origin分分支的仓库。
+git remote add origin git@github.com:michaelliao/learngit.git
+
+8 把本地代码master分支上传到origin分支库。
+git push -u origin master
+
+后续直接git push就可以了。
